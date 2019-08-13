@@ -30,6 +30,8 @@ const useStyles = makeStyles(theme => ({
       margin: "20px",
       width: "140px",
       backgroundColor: "#e7ae0f",
+      padding: "5px 10px",
+      textAlign: "center"
       
     }
   }));
