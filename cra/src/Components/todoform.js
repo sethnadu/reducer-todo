@@ -21,7 +21,6 @@ function TodoForm({handleAdd, clearTasks}) {
 
     return (
         <>
-        <h2>Todo List:</h2>
         <form onSubmit = {handleSubmit}>
             <input name ="item" placeholder = "New Task" value = {task}  onChange = {handleChange}/>
             <button onClick = {handleSubmit} type = "submit">Add Task</button>

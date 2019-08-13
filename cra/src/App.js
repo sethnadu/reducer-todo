@@ -15,38 +15,43 @@ import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(formReducer, initialState)
-
+  console.log(state)
 
 
   const handleAdd = newTask => {
     const taskSetup = {
-      item: newTask, completed: false, id: Date.now()
+      task: newTask, completed: false, id: Date.now()
     };
    dispatch({ type: "ADD_TASK", payload: taskSetup })
   }
 
-  // const toggleTask = id => {
-  //    dispatch({ type: "ADD_TASK", payload: taskSetup })
-  //   setAddItem(addItem.map(item => {
-  //     if(item.id === id) {
-  //       return {
-  //         ...item,
-  //         completed: !item.completed
-  //       }
-  //     } else {
-  //       return item
-  //     }
-  //   }))
-  // }
+  const toggleTask = id => {
+    console.log(id)
+     dispatch({ type: "TOGGLE_TASKS", payload: id })
+  
+    // setAddItem(addItem.map(item => {
+    //   if(item.id === id) {
+    //     return {
+    //       ...item,
+    //       completed: !item.completed
+    //     }
+    //   } else {
+    //     return item
+    //   }
+    // }))
+  }
 
   const clearTasks = () => {
     dispatch({type: "CLEAR_TASKS"})
   }
 
   return (
-    <div className="App">
+    <div className="App"> 
+      <h2>Todo List:</h2>
+     <div className = "taskDiv">
+     {state.item.map(item => ( <TodoList key = {item.id} item = {item} toggleTask = {toggleTask} />))}
+     </div>
      <TodoForm handleAdd={handleAdd} clearTasks = {clearTasks}/>
-     {/* {addItem.map(item => ( <TodoList key = {item.id} item = {item} toggleTask = {toggleTask} />))} */}
     </div>
   );
 }

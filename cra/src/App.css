@@ -31,3 +31,42 @@
     transform: rotate(360deg);
   }
 }
+
+.taskDiv {
+  width: 340px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.task {
+  width: 100px;
+  background-color: #8d0901;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px black;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 5px;
+
+  
+}
+
+.taskcompleted {
+  width: 100px;
+  background-color: #e7ae0f;
+  border: 1px solid black;
+  opacity: .5;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px black;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 5px;
+  text-decoration: line-through #8d0901;
+  text-decoration-style: double;
+  }
