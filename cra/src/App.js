@@ -34,7 +34,7 @@ function App() {
     const taskSetup = {
       task: newTask, completed: false, id: Date.now()
     };
-   dispatch({ type: "ADD_TASK", payload: taskSetup })
+   {newTask !== "" && dispatch({ type: "ADD_TASK", payload: taskSetup }) }
   }
 
   const toggleTask = id => {
