@@ -28,7 +28,8 @@ const useStyles = makeStyles(theme => ({
       border: "none", 
       borderBottom: "2px solid #8d0901",
       margin: "20px",
-      width: "140px"
+      width: "140px",
+      backgroundColor: "#e7ae0f",
       
     }
   }));
@@ -47,6 +48,7 @@ function TodoForm({handleAdd, clearTasks}) {
     const handleSubmit = event => {
         event.preventDefault()
         handleAdd(task)
+        setTask("")
     }
 
     const handleRemove = event => {
