@@ -3,7 +3,11 @@
 
 
 export const initialState= {
-    item: []
+    item: [{
+        task: 'Learn about reducers',
+        completed: false,
+        id: 3892987589
+      }]
 };
 
 export const formReducer = (state, action) => {
