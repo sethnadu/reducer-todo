@@ -56,9 +56,9 @@
 
 .taskcompleted {
   width: 100px;
-  background-color: #e7ae0f;
+  background-color: white;
   border: 1px solid black;
-  opacity: .5;
+  opacity: .8;
   color: black;
   border-radius: 5px;
   box-shadow: 5px 5px 10px black;
