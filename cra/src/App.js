@@ -1,21 +1,33 @@
 import React, {useState, useReducer} from 'react';
 import { initialState, formReducer} from "./Reducers/formreducers.js";
+import { makeStyles } from '@material-ui/styles';
 
 import TodoList from "./Components/TodoList.js";
 import TodoForm from "./Components/todoform.js"
 import './App.css';
 
 
-// const testTodo = [{
-//   item: "test",
-//   completed: false,
-//   id: Date.now()
-// }]
+const useStyles = makeStyles(theme => ({
+  div: {
+    width: "400px",
+    textAlign: "center",
+    margin: "20px auto",
+    border: "4px solid #8d0901",
+    backgroundColor: "#e7ae0f",
 
+  },
+  title: {
+    fontSize: "2rem",
+    textDecoration: "underline"
+    
+}
+ 
+}));
 
 function App() {
   const [state, dispatch] = useReducer(formReducer, initialState)
-  console.log(state)
+  const classes = useStyles();
+
 
 
   const handleAdd = newTask => {
@@ -28,17 +40,6 @@ function App() {
   const toggleTask = id => {
     console.log(id)
      dispatch({ type: "TOGGLE_TASKS", payload: id })
-  
-    // setAddItem(addItem.map(item => {
-    //   if(item.id === id) {
-    //     return {
-    //       ...item,
-    //       completed: !item.completed
-    //     }
-    //   } else {
-    //     return item
-    //   }
-    // }))
   }
 
   const clearTasks = () => {
@@ -46,8 +47,8 @@ function App() {
   }
 
   return (
-    <div className="App"> 
-      <h2>Todo List:</h2>
+    <div className={classes.div}> 
+      <h2 className={classes.title}>Todo List:</h2>
      <div className = "taskDiv">
      {state.item.map(item => ( <TodoList key = {item.id} item = {item} toggleTask = {toggleTask} />))}
      </div>
